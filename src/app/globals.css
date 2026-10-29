@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  #thermal-ticket, #thermal-ticket * {
+    visibility: visible !important;
+  }
+  #thermal-ticket {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 48mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    color: #000 !important;
+    background: #fff !important;
+  }
+  @page {
+    size: 58mm auto;
+    margin: 0mm;
+  }
+}
